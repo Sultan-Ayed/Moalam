@@ -2,111 +2,120 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-.p{background:#0A0A0A;font-family:'Tajawal',sans-serif;direction:rtl;color:#F5F0E8;overflow:hidden}
+.p{background:#0A0A0A;font-family:'Tajawal',sans-serif;direction:rtl;color:#F5F0E8;width:100%}
 
 /* NAV */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:1px solid #1A1A1A;background:#0A0A0A}
-.nav-logo{font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px;display:flex;align-items:center;gap:10px}
-.nav-dot{width:10px;height:10px;background:#C9913A;border-radius:50%}
-.nav-links{display:flex;gap:32px}
-.nav-link{font-size:13px;color:#888;font-weight:400}
-.nav-link.active{color:#fff}
-.nav-cta{background:#C9913A;color:#0A0A0A;font-size:13px;font-weight:700;padding:10px 22px;border-radius:6px;font-family:'Tajawal',sans-serif}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid #1E1E1E}
+.nav-logo{font-size:24px;font-weight:900;color:#fff;display:flex;align-items:center;gap:10px}
+.nav-dot{width:10px;height:10px;background:#C9913A;border-radius:50%;flex-shrink:0}
+.nav-links{display:flex;gap:36px}
+.nav-link{font-size:15px;color:#888;font-weight:400;cursor:pointer}
+.nav-link.active{color:#fff;font-weight:600}
+.nav-cta{background:#C9913A;color:#0A0A0A;font-size:16px;font-weight:700;padding:12px 28px;border-radius:8px;cursor:pointer}
 
-/* HERO */
-.hero{padding:100px 48px 80px;position:relative;overflow:hidden;min-height:500px;display:flex;flex-direction:column;justify-content:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#161616;border:1px solid #2A2A2A;border-radius:20px;padding:6px 16px;font-size:12px;color:#C9913A;margin-bottom:32px;width:fit-content}
-.hero-eyebrow-dot{width:6px;height:6px;background:#C9913A;border-radius:50%}
-.hero-title{font-size:72px;font-weight:900;line-height:1.05;letter-spacing:-2px;max-width:700px}
-.hero-title span{color:#C9913A}
-.hero-sub{font-size:16px;color:#666;margin-top:24px;max-width:500px;line-height:1.8;font-weight:400}
-.hero-actions{display:flex;gap:14px;margin-top:40px;align-items:center}
-.btn-primary{background:#C9913A;color:#0A0A0A;font-size:14px;font-weight:700;padding:14px 28px;border-radius:8px;font-family:'Tajawal',sans-serif}
-.btn-secondary{color:#888;font-size:14px;font-weight:400;display:flex;align-items:center;gap:8px}
-.btn-arrow{width:32px;height:32px;border:1px solid #2A2A2A;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+/* HERO — split layout, text right, decoration left */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:520px;padding:0 48px;align-items:center;gap:0;position:relative;overflow:hidden}
+.hero-text{display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding:60px 0;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#161616;border:1px solid #2A2A2A;border-radius:20px;padding:7px 18px;font-size:14px;color:#C9913A;margin-bottom:28px}
+.hero-eyebrow-dot{width:7px;height:7px;background:#C9913A;border-radius:50%;flex-shrink:0}
+.hero-title{font-size:80px;font-weight:900;line-height:1.0;letter-spacing:-2px;margin-bottom:24px}
+.hero-title .gold{color:#C9913A}
+.hero-sub{font-size:16px;color:#777;line-height:1.9;max-width:420px;margin-bottom:40px;font-weight:400}
+.hero-actions{display:flex;gap:16px;align-items:center;justify-content:flex-end}
+.btn-primary{background:#C9913A;color:#0A0A0A;font-size:17px;font-weight:700;padding:16px 36px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.btn-ghost{display:flex;align-items:center;gap:10px;color:#888;font-size:16px;font-weight:500;cursor:pointer;white-space:nowrap}
+.btn-ghost-circle{width:38px;height:38px;border:1px solid #2E2E2E;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 
-/* Fire BG decoration */
-.hero-bg-dec{position:absolute;left:0;top:0;bottom:0;width:50%;pointer-events:none;opacity:0.04}
-.circle-dec{position:absolute;border-radius:50%;border:1px solid #C9913A}
+/* Hero decoration — left side only, no overlap with text */
+.hero-deco{position:relative;height:520px;display:flex;align-items:center;justify-content:center}
+.deco-ring{position:absolute;border-radius:50%;border:1px solid #C9913A}
+.ring-lg{width:380px;height:380px;border-color:#C9913A25}
+.ring-md{width:280px;height:280px;border-color:#C9913A40}
+.ring-sm{width:180px;height:180px;border-color:#C9913A20}
+.deco-center{width:120px;height:120px;background:#111;border:2px solid #C9913A;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:54px;font-weight:900;color:#C9913A;font-family:'Tajawal',sans-serif;position:relative;z-index:2}
+.deco-spark{position:absolute;width:8px;height:8px;background:#C9913A;border-radius:50%}
+.spark1{top:60px;right:80px;opacity:.7}
+.spark2{bottom:80px;left:60px;opacity:.5}
+.spark3{top:100px;left:100px;width:5px;height:5px;opacity:.4}
+.spark4{bottom:120px;right:50px;width:4px;height:4px;opacity:.6}
 
 /* MARQUEE */
 .marquee-wrap{border-top:1px solid #1A1A1A;border-bottom:1px solid #1A1A1A;padding:16px 0;overflow:hidden;background:#0D0D0D}
-.marquee-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 18s linear infinite}
-.marquee-item{font-size:13px;color:#444;font-weight:500;display:flex;align-items:center;gap:12px}
-.marquee-dot{color:#C9913A;font-size:10px}
+.marquee-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 20s linear infinite}
+.marquee-item{font-size:14px;color:#444;font-weight:500;display:flex;align-items:center;gap:14px;flex-shrink:0}
+.marquee-dot{color:#C9913A;font-size:9px}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ABOUT */
 .section{padding:80px 48px}
-.section-label{font-size:11px;color:#C9913A;font-weight:700;letter-spacing:3px;margin-bottom:20px;text-transform:uppercase}
-.section-title{font-size:42px;font-weight:900;line-height:1.15;letter-spacing:-1px}
-.section-title span{color:#C9913A}
+.sec-label{font-size:11px;color:#C9913A;font-weight:700;letter-spacing:3px;margin-bottom:16px}
+.sec-title{font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:0}
+.sec-title .gold{color:#C9913A}
 
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-.about-text{font-size:15px;color:#888;line-height:2;font-weight:400}
-.about-text span{color:#F5F0E8}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.stat{background:#111;border:1px solid #1E1E1E;border-radius:12px;padding:24px;position:relative;overflow:hidden}
-.stat::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:#C9913A;border-radius:0 12px 12px 0}
-.stat-num{font-size:40px;font-weight:900;color:#C9913A;line-height:1}
-.stat-lbl{font-size:12px;color:#555;margin-top:6px;font-weight:400}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:48px;align-items:start}
+.about-body{font-size:15px;color:#777;line-height:2;font-weight:400}
+.about-body span{color:#F5F0E8}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{background:#111;border:1px solid #1E1E1E;border-radius:14px;padding:28px 22px;position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:#C9913A;border-radius:0 14px 14px 0}
+.stat-num{font-size:44px;font-weight:900;color:#C9913A;line-height:1;letter-spacing:-1px}
+.stat-lbl{font-size:13px;color:#555;margin-top:6px}
 
 /* TARGETS */
 .targets-sec{padding:0 48px 80px}
-.targets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1A1A1A;border:1px solid #1A1A1A;border-radius:16px;overflow:hidden;margin-top:40px}
-.target{background:#0D0D0D;padding:40px 28px;position:relative}
-.target-num{font-size:11px;color:#333;font-weight:700;letter-spacing:2px;margin-bottom:20px}
-.target-icon-wrap{width:52px;height:52px;background:#161616;border:1px solid #C9913A20;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
-.target-name{font-size:20px;font-weight:700;margin-bottom:10px}
-.target-desc{font-size:13px;color:#555;line-height:1.8}
-.target:hover .target-icon-wrap{background:#C9913A15;border-color:#C9913A50}
+.targets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1A1A1A;border:1px solid #1A1A1A;border-radius:16px;overflow:hidden;margin-top:44px}
+.target{background:#0D0D0D;padding:44px 32px}
+.target-num{font-size:11px;color:#2E2E2E;font-weight:700;letter-spacing:3px;margin-bottom:24px}
+.target-icon{width:56px;height:56px;background:#141414;border:1px solid #2A2A2A;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:22px}
+.target-name{font-size:22px;font-weight:700;margin-bottom:10px}
+.target-desc{font-size:14px;color:#555;line-height:1.8}
 
 /* SERVICES */
 .services-sec{padding:0 48px 80px}
-.svc-list{margin-top:40px;border-top:1px solid #1A1A1A}
-.svc-row{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid #1A1A1A;cursor:pointer}
-.svc-left{display:flex;align-items:center;gap:20px}
-.svc-num{font-size:12px;color:#333;font-weight:700;width:28px}
-.svc-name{font-size:20px;font-weight:700}
-.svc-tag{font-size:11px;color:#C9913A;background:#C9913A12;border:1px solid #C9913A30;padding:4px 12px;border-radius:12px}
+.svc-list{margin-top:44px;border-top:1px solid #1A1A1A}
+.svc-row{display:flex;align-items:center;justify-content:space-between;padding:30px 0;border-bottom:1px solid #1A1A1A;cursor:pointer}
 .svc-row:hover .svc-name{color:#C9913A}
+.svc-left{display:flex;align-items:center;gap:24px}
+.svc-num{font-size:13px;color:#2E2E2E;font-weight:700;width:30px}
+.svc-name{font-size:22px;font-weight:700;transition:color .2s}
+.svc-tag{font-size:13px;color:#C9913A;background:#C9913A12;border:1px solid #C9913A30;padding:6px 16px;border-radius:14px;font-weight:600}
 
 /* SUPERVISOR */
 .sup-sec{padding:0 48px 80px}
-.sup-card{background:#0D0D0D;border:1px solid #1E1E1E;border-radius:20px;overflow:hidden;margin-top:40px;display:grid;grid-template-columns:1fr 1fr}
-.sup-left{padding:48px;border-left:1px solid #1A1A1A;display:flex;flex-direction:column;justify-content:space-between}
-.sup-avatar-area{display:flex;align-items:center;gap:16px;margin-bottom:32px}
-.sup-av{width:64px;height:64px;background:#161616;border:2px solid #C9913A;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#C9913A;flex-shrink:0;font-family:'Tajawal',sans-serif}
-.sup-name{font-size:20px;font-weight:700}
-.sup-role{font-size:13px;color:#555;margin-top:4px}
-.sup-bio{font-size:14px;color:#666;line-height:2}
-.sup-bio span{color:#F5F0E8}
-.sup-badge-row{display:flex;gap:8px;margin-top:24px}
-.sup-badge{background:#161616;border:1px solid #2A2A2A;border-radius:6px;padding:6px 14px;font-size:12px;color:#888}
-.sup-right{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:16px}
-.sup-r-title{font-size:13px;color:#444;margin-bottom:8px;font-weight:500}
-.sup-feature{display:flex;align-items:flex-start;gap:12px;padding:16px;background:#111;border-radius:10px;border:1px solid #1E1E1E}
-.sup-feature-dot{width:6px;height:6px;background:#C9913A;border-radius:50%;margin-top:6px;flex-shrink:0}
-.sup-feature-text{font-size:13px;color:#666;line-height:1.7}
-.sup-feature-text span{color:#F5F0E8}
+.sup-card{background:#0D0D0D;border:1px solid #1E1E1E;border-radius:20px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;margin-top:44px}
+.sup-left{padding:48px;border-left:1px solid #1A1A1A}
+.sup-top{display:flex;align-items:center;gap:18px;margin-bottom:32px}
+.sup-av{width:70px;height:70px;background:#141414;border:2px solid #C9913A;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:#C9913A;flex-shrink:0}
+.sup-name-txt{font-size:21px;font-weight:700}
+.sup-role-txt{font-size:13px;color:#555;margin-top:4px}
+.sup-bio{font-size:15px;color:#666;line-height:1.9}
+.sup-bio span{color:#E6DFD2}
+.sup-tags{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.sup-tag{background:#141414;border:1px solid #242424;border-radius:8px;padding:7px 16px;font-size:13px;color:#888}
+.sup-right{padding:48px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+.sup-feat{display:flex;align-items:flex-start;gap:14px;background:#111;border:1px solid #1E1E1E;border-radius:12px;padding:18px}
+.sup-feat-dot{width:7px;height:7px;background:#C9913A;border-radius:50%;margin-top:7px;flex-shrink:0}
+.sup-feat-txt{font-size:14px;color:#666;line-height:1.7}
+.sup-feat-txt span{color:#E6DFD2;font-weight:600}
 
 /* ANNOUNCE */
 .ann-sec{padding:0 48px 80px}
-.ann-card{background:#C9913A;border-radius:20px;padding:56px 48px;display:flex;align-items:center;justify-content:space-between}
-.ann-title{font-size:36px;font-weight:900;color:#0A0A0A;line-height:1.2;max-width:400px}
-.ann-right{text-align:left}
-.ann-desc{font-size:14px;color:#0A0A0A99;max-width:260px;line-height:1.8;margin-bottom:24px;text-align:right}
-.ann-btn{background:#0A0A0A;color:#F5F0E8;font-size:14px;font-weight:700;padding:14px 28px;border-radius:8px;font-family:'Tajawal',sans-serif;display:inline-block}
+.ann-card{background:#C9913A;border-radius:20px;padding:60px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.ann-title{font-size:40px;font-weight:900;color:#0A0A0A;line-height:1.2;max-width:380px}
+.ann-right{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.ann-desc{font-size:15px;color:#0A0A0A80;max-width:280px;line-height:1.8;font-weight:400}
+.ann-btn{background:#0A0A0A;color:#F5F0E8;font-size:17px;font-weight:700;padding:16px 32px;border-radius:10px;cursor:pointer}
 
 /* FOOTER */
-.footer{border-top:1px solid #1A1A1A;padding:40px 48px;display:flex;align-items:center;justify-content:space-between}
-.footer-logo{font-size:18px;font-weight:900;display:flex;align-items:center;gap:8px}
-.footer-center{font-size:12px;color:#444;text-align:center}
-.footer-link{color:#C9913A;font-size:12px}
+.footer{border-top:1px solid #1A1A1A;padding:36px 48px;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-size:20px;font-weight:900;display:flex;align-items:center;gap:10px}
+.footer-mid{font-size:13px;color:#444;text-align:center;line-height:2}
+.footer-right{font-size:13px;color:#C9913A}
 </style>
 
 <div class="p">
 
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo"><div class="nav-dot"></div>مُعْلَم</div>
   <div class="nav-links">
@@ -118,18 +127,32 @@
   <div class="nav-cta">انضم الآن</div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="circle-dec" style="width:600px;height:600px;right:-100px;top:-100px;border:1px solid #C9913A"></div>
-  <div class="circle-dec" style="width:400px;height:400px;right:0px;top:50px;border:1px solid #C9913A"></div>
-  <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>مبادرة تطوعية سعودية</div>
-  <h1 class="hero-title">علامتُك<br><span>الأولى</span><br>في سيرتِك</h1>
-  <p class="hero-sub">مبادرة مُعْلَم تُرافقك من أول خطوة حتى أعلى درجة — إرشاد مهني حقيقي، بروح تطوعية خالصة.</p>
-  <div class="hero-actions">
-    <div class="btn-primary">ابدأ رحلتك</div>
-    <div class="btn-secondary"><div class="btn-arrow">←</div>شف خدماتنا</div>
+  <!-- decoration LEFT side only -->
+  <div class="hero-deco">
+    <div class="deco-ring ring-lg"></div>
+    <div class="deco-ring ring-md"></div>
+    <div class="deco-ring ring-sm"></div>
+    <div class="deco-center">م</div>
+    <div class="deco-spark spark1"></div>
+    <div class="deco-spark spark2"></div>
+    <div class="deco-spark spark3"></div>
+    <div class="deco-spark spark4"></div>
+  </div>
+  <!-- text RIGHT side only, no overlap -->
+  <div class="hero-text">
+    <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>مبادرة تطوعية سعودية</div>
+    <h1 class="hero-title">علامتُك<br><span class="gold">الأولى</span><br>في سيرتِك</h1>
+    <p class="hero-sub">مبادرة مُعْلَم تُرافقك من أول خطوة حتى أعلى درجة — إرشاد مهني حقيقي، بروح تطوعية خالصة.</p>
+    <div class="hero-actions">
+      <div class="btn-ghost"><div class="btn-ghost-circle">←</div>شف خدماتنا</div>
+      <div class="btn-primary">ابدأ رحلتك</div>
+    </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-inner">
     <div class="marquee-item"><span class="marquee-dot">◆</span>سيرة ذاتية احترافية</div>
@@ -149,13 +172,14 @@
   </div>
 </div>
 
+<!-- ABOUT -->
 <section class="section">
-  <div class="section-label">من نحن</div>
-  <h2 class="section-title">شريك مهني حقيقي<br>مو <span>بس</span> نصيحة</h2>
+  <div class="sec-label">من نحن</div>
+  <h2 class="sec-title">شريك مهني حقيقي<br>مو <span class="gold">بس</span> نصيحة</h2>
   <div class="about-grid">
-    <p class="about-text">مبادرة مُعْلَم مبادرة تطوعية تخدم <span>الطلاب والباحثين عن العمل والموظفين</span> في تطوير مساراتهم المهنية. نؤمن إن كل شخص يستحق دعم حقيقي في بداياته — ولذلك ما نأخذ فلساً واحداً.</p>
-    <div class="about-stats">
-      <div class="stat"><div class="stat-num">+500</div><div class="stat-lbl">مستفيد من المبادرة</div></div>
+    <p class="about-body">مبادرة مُعْلَم مبادرة تطوعية تخدم <span>الطلاب والباحثين عن العمل والموظفين</span> في تطوير مساراتهم المهنية. نؤمن إن كل شخص يستحق دعم حقيقي في بداياته  .</p>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">+500</div><div class="stat-lbl"> تحقيق مستفيد من المبادرة </div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">تطوعية خالصة</div></div>
       <div class="stat"><div class="stat-num">24/7</div><div class="stat-lbl">دعم مستمر</div></div>
       <div class="stat"><div class="stat-num">+1</div><div class="stat-lbl">سنة عطاء</div></div>
@@ -163,34 +187,36 @@
   </div>
 </section>
 
+<!-- TARGETS -->
 <section class="targets-sec">
-  <div class="section-label">من نخدم</div>
-  <h2 class="section-title">ثلاث فئات،<br>هدف <span>واحد</span></h2>
+  <div class="sec-label">من نخدم</div>
+  <h2 class="sec-title">ثلاث فئات،<br>هدف <span class="gold">واحد</span></h2>
   <div class="targets-grid">
     <div class="target">
       <div class="target-num">01</div>
-      <div class="target-icon-wrap">🎓</div>
+      <div class="target-icon">🎓</div>
       <div class="target-name">الطلاب</div>
       <div class="target-desc">بناء الملف المهني وتطوير المهارات قبل التخرج وبعده</div>
     </div>
     <div class="target">
       <div class="target-num">02</div>
-      <div class="target-icon-wrap">💼</div>
+      <div class="target-icon">💼</div>
       <div class="target-name">الباحثون عن عمل</div>
-      <div class="target-desc">دعم شامل للحصول على الفرصة الوظيفية المناسبة</div>
+      <div class="target-desc">دعم للحصول على الفرصة الوظيفية المناسبة</div>
     </div>
     <div class="target">
       <div class="target-num">03</div>
-      <div class="target-icon-wrap">📈</div>
+      <div class="target-icon">📈</div>
       <div class="target-name">الموظفون</div>
       <div class="target-desc">التطوير المستمر والارتقاء في المسار الوظيفي</div>
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services-sec">
-  <div class="section-label">خدماتنا</div>
-  <h2 class="section-title">إيش <span>نقدم</span> لك؟</h2>
+  <div class="sec-label">خدماتنا</div>
+  <h2 class="sec-title"> <span class="gold">نقدم</span> لك؟</h2>
   <div class="svc-list">
     <div class="svc-row">
       <div class="svc-left"><div class="svc-num">01</div><div class="svc-name">مراجعة السيرة الذاتية</div></div>
@@ -211,50 +237,50 @@
   </div>
 </section>
 
+<!-- SUPERVISOR -->
 <section class="sup-sec">
-  <div class="section-label">المشرف</div>
-  <h2 class="section-title">بإشراف <span>م. سلطان</span></h2>
+  <div class="sec-label">المشرف</div>
+  <h2 class="sec-title">بإشراف <span class="gold">  م. سلطان بن عايد</span></h2>
   <div class="sup-card">
     <div class="sup-left">
-      <div>
-        <div class="sup-avatar-area">
-          <div class="sup-av">س</div>
-          <div>
-            <div class="sup-name">م. سلطان بن عايد</div>
-            <div class="sup-role">Sultan bin Ayed — Engineer & Career Mentor</div>
-          </div>
+      <div class="sup-top">
+        <div class="sup-av">س</div>
+        <div>
+          <div class="sup-name-txt">م. سلطان بن عايد</div>
+          <div class="sup-role-txt">Sultan bin Ayed — Engineer & Career Mentor</div>
         </div>
-        <p class="sup-bio">مهندس ومتخصص في التطوير المهني والتوجيه الوظيفي. أسس مبادرة مُعْلَم من إيمان بأن <span>كل شخص يستحق دعماً حقيقياً</span> في بداياته المهنية — يُشرف شخصياً على كل البرامج.</p>
-        <div class="sup-badge-row">
-          <div class="sup-badge">مهندس</div>
-          <div class="sup-badge">Mentor</div>
-          <div class="sup-badge">مؤسس</div>
-        </div>
+      </div>
+      <p class="sup-bio">مهندس ومتخصص في التطوير المهني والتوجيه الوظيفي. أسس مبادرة مُعْلَم من إيمان بأن <span>كل شخص يستحق دعماً حقيقياً</span> في بداياته — يُشرف شخصياً على كل البرامج.</p>
+      <div class="sup-tags">
+        <div class="sup-tag">مهندس</div>
+        <div class="sup-tag">Mentor</div>
+        <div class="sup-tag">مؤسس المبادرة</div>
       </div>
     </div>
     <div class="sup-right">
-      <div class="sup-r-title">ما يميز الإشراف</div>
-      <div class="sup-feature"><div class="sup-feature-dot"></div><div class="sup-feature-text"><span>إشراف شخصي مباشر</span> على كل برامج المبادرة دون وسيط</div></div>
-      <div class="sup-feature"><div class="sup-feature-dot"></div><div class="sup-feature-text"><span>خبرة هندسية ومهنية</span> تُترجَم إلى توجيه عملي وواقعي</div></div>
-      <div class="sup-feature"><div class="sup-feature-dot"></div><div class="sup-feature-text"><span>روح تطوعية خالصة</span> دون مقابل مادي أو تجارة</div></div>
+      <div class="sup-feat"><div class="sup-feat-dot"></div><div class="sup-feat-txt"><span>إشراف شخصي مباشر</span> على كل برامج المبادرة دون وسيط</div></div>
+      <div class="sup-feat"><div class="sup-feat-dot"></div><div class="sup-feat-txt"><span>خبرة هندسية ومهنية</span> تُترجَم إلى توجيه عملي وواقعي</div></div>
+      <div class="sup-feat"><div class="sup-feat-dot"></div><div class="sup-feat-txt"><span>روح تطوعية خالصة</span> بدون مقابل مادي</div></div>
     </div>
   </div>
 </section>
 
+<!-- ANNOUNCE -->
 <section class="ann-sec">
   <div class="ann-card">
     <div class="ann-title">انضم لمجتمع مُعْلَم الحين!</div>
     <div class="ann-right">
-      <p class="ann-desc">المبادرة تستقبل طلبات الانضمام والتطوع — سارع وكن جزءاً من رحلة التمكين المهني العربي</p>
+      <p class="ann-desc">المبادرة تستقبل طلبات الانضمام — سارع وكن جزءاً من رحلة التمكين المهني العربي</p>
       <div class="ann-btn">سجّل الآن</div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo"><div class="nav-dot"></div>مُعْلَم | Moalam</div>
-  <div class="footer-center">علامتُك الأولى في سيرتِك المهنية<br><span style="color:#333">© 2024 مبادرة مُعْلَم — جميع الحقوق محفوظة</span></div>
-  <div class="footer-link">github.com/Moalam</div>
+  <div class="footer-mid">علامتُك الأولى في سيرتِك المهنية<br><span style="color:#2A2A2A">© 2026 مبادرة مُعْلَم — جميع الحقوق محفوظة</span></div>
+  <div class="footer-right">github.com/Moalam</div>
 </footer>
 
 </div>
